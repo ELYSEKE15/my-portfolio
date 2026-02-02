@@ -1,0 +1,383 @@
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 140px 30px 30px;
+  font-family: Arial, sans-serif;
+  color: white;
+  background:
+    radial-gradient(circle at right, rgba(255,140,0,0.35), transparent 45%),
+    linear-gradient(135deg, #000000, #2b1206, #4a1f08);
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 30px;
+}
+
+/* LOGO */
+.logo .letter {
+  font-size: 50px;
+}
+.logo .letter2 {
+  font-size: 20px;
+  color: #8b300e;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 40px;
+  padding: 10px 20px;
+}
+nav li {
+  list-style: none;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+nav a:hover {
+  opacity: 1;
+}
+.first {
+  color: #8b300e;
+}
+
+/* BUTTONS */
+button,
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+
+  border: 1px solid #7d2828;
+  border-radius: 40px;
+  background: #4a1f08;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover,
+.download-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,140,0,0.8);
+}
+
+/* ================= MAIN SECTION ================= */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* LEFT CONTENT */
+.internal {
+  flex: 1;
+}
+
+h4 {
+  font-size: 14px;
+  opacity: 0.7;
+}
+.ke {
+  color: #863306;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 10px 0;
+}
+
+p {
+  opacity: 0.8;
+}
+
+/* ================= HIRE ME ================= */
+.hire-me {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* ORDER FIX */
+.hire-me > button {
+  order: 1; /* Hire Me first */
+}
+
+.hire-me > .download-btn {
+  order: 2; /* Download CV second */
+}
+
+.hire-me > .mail-btn {
+  order: 3; /* Envelope last */
+}
+
+/* MAIL ICON */
+.mail-btn {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* HR */
+hr {
+  width: 350px;
+  margin: 25px 0;
+  opacity: 0.4;
+}
+
+/* GLASS INFO BOX */
+.box {
+  width: 300px;
+  height: 170px;
+  padding: 20px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.box-parag {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+/* SOCIAL ICONS */
+.box i {
+  font-size: 22px;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-hireme{
+  background-color: #863306;
+  color: white;
+}
+.hire-me:hover{
+  filter: blur(0.9) color black;
+}
+
+.box i.fa-instagram { color: #E4405F; }
+.box i.fa-facebook  { color: #1877F2; }
+.box i.fa-whatsapp  { color: #25D366; }
+
+.box i:hover {
+  transform: scale(1.3);
+}
+
+/* DEVELOPER IMAGE */
+.developer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 420px;
+  background: radial-gradient(
+    circle,
+    rgba(255,140,0,0.45),
+    rgba(255,94,0,0.2),
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(45px);
+  z-index: 1;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* IMAGE */
+.image-wrapper img {
+  width: 380px;
+  position: relative;
+  z-index: 2;
+  filter:
+    drop-shadow(0 0 40px rgba(255,140,0,0.45))
+    drop-shadow(0 0 80px rgba(255,94,0,0.25));
+}
+
+/* TECH ICONS  */
+.tech {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  z-index: 3;
+  animation: float 4s ease-in-out infinite;
+}
+
+.html i   { color: #e34c26; }
+.css i    { color: #264de4; }
+.js i     { color: #f0db4f; }
+.react i  { color: #61dafb; }
+.figma i  { color: #f24e1e; }
+.php i    { color: #8993be; }
+.python i { color: #3776ab; }
+
+/* POSITIONS */
+.html   { top: -20px; left: 40px; }
+.css    { top: 40px; right: -20px; }
+.js     { bottom: 40px; left: -20px; }
+.react  { top: 130px; right: -35px; }
+.figma  { bottom: -20px; right: 60px; }
+.php    { bottom: 120px; right: -25px; }
+.python { top: 200px; left: -35px; }
+
+.tech:hover {
+  transform: scale(1.4);
+  box-shadow: 0 0 25px rgba(255,140,0,0.9);
+}
+/*SKILLS*/
+
+.skills{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.f-f{
+  font-size: 12px;
+}
+.cards{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.card{
+  padding: 5px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+  margin-right: 20px;
+  opacity: 0.8;
+}
+.card img{
+width: 300px;
+height: 150px;
+padding: 5px;
+border-radius: 15px;
+
+}
+.card p{
+  font-size: 14px;
+  opacity: 0.9;
+}
+.btn-skills{
+  background-color: #863306;
+  color: white;
+}
+.Backend{
+  margin-top: 10px;
+}
+/* ================= ANIMATIONS ================= */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  header {
+    padding: 15px 20px;
+    font-size: 12px;
+  } 
+  .logo{
+    font-size: 10px;
+  }
+
+  header > .download-btn {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hire-me {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .image-wrapper img {
+    width: 300px;
+  }
+
+  hr {
+    margin: 20px auto;
+  }
+
+  .box {
+    margin: auto;
+  } 
+  .box i{
+    margin-top:10px;
+  }
+  .btn-hireme{
+    background-color: #863306;
+    color: white;
+  }
+  .skills{
+    flex-direction: column;
+  }
+  .cards{
+    flex-direction: column;
+  }
+  h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
